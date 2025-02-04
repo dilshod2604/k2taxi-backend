@@ -11,8 +11,11 @@ const server = (0, fastify_1.default)({ logger: false });
 server.register(autoload_1.default, {
     dir: path_1.default.join(__dirname, "plugins"),
 });
-server.register(autoload_1.default, {
-    dir: path_1.default.join(__dirname, "routes"),
-    options: { prefix: "api" },
-});
+server.get("/", (req, reply) => {
+    reply.send({ message: "Hello from Fastify on Vercel!" });
+}),
+    server.register(autoload_1.default, {
+        dir: path_1.default.join(__dirname, "routes"),
+        options: { prefix: "api" },
+    });
 exports.default = server;

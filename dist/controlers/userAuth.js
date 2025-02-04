@@ -30,7 +30,7 @@ const createUser = (req, reply) => __awaiter(void 0, void 0, void 0, function* (
     }
     catch (error) {
         console.error(error);
-        reply.status(500).send({ error: "Internal server error" });
+        reply.status(500).send({ error });
     }
 });
 exports.createUser = createUser;
