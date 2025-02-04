@@ -24,7 +24,7 @@ export const createUser = async (
     reply.status(201).send(user);
   } catch (error) {
     console.error(error);
-    reply.status(500).send({ error: "Internal server error" });
+    reply.status(500).send({ error});
   }
 };
 
