@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js"
+    "build": "tsc && npx prisma generate",  
+    "start": "node dist/index.js",
+    "vercel-build": "npm run build && npx prisma generate" 
   },
   "keywords": [],
   "author": "",
